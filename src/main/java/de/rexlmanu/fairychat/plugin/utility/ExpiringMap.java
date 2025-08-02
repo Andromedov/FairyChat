@@ -18,7 +18,7 @@ public class ExpiringMap<K, V> {
     ValueWithExpirationTime<V> oldValue = this.map.put(key, newValue);
 
     // If the key already exists, cancel its old expiration task
-    if (oldValue != null) {
+    if (oldValue != null && oldValue.getRemovalTask() != null) {
       oldValue.getRemovalTask().cancel(false);
     }
 

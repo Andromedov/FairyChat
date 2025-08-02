@@ -52,7 +52,7 @@ dependencies {
 tasks {
     compileJava {
         options.encoding = Charsets.UTF_8.name()
-        options.release.set(17)
+        options.release.set(21)
     }
     build {
         dependsOn("shadowJar")
@@ -63,7 +63,7 @@ tasks {
             "name" to project.name,
             "version" to project.version,
             "description" to project.description,
-            "apiVersion" to "1.19"
+            "apiVersion" to "1.21"
         )
         inputs.properties(props)
         filesMatching("paper-plugin.yml") {
@@ -89,7 +89,7 @@ tasks {
         }
     }
     runServer {
-        minecraftVersion("1.20.4")
+        minecraftVersion("1.21.8")
     }
 }
 
@@ -149,7 +149,7 @@ bukkit {
     main = "de.rexlmanu.fairychat.plugin.FairyChatPlugin"
     website = "https://github.com/rexlManu/FairyChat"
     foliaSupported = true
-    apiVersion = "1.19"
+    apiVersion = "1.21"
     load = BukkitPluginDescription.PluginLoadOrder.POSTWORLD
     softDepend = listOf("MiniPlaceholders", "LuckPerms", "PlaceholderAPI", "UltraPermissions")
     prefix = "FairyChat"
@@ -159,7 +159,7 @@ bukkit {
 paper {
     main = "de.rexlmanu.fairychat.plugin.FairyChatPlugin"
     loader = "de.rexlmanu.fairychat.plugin.paper.FairyChatLoader"
-    apiVersion = "1.20"
+    apiVersion = "1.21"
     foliaSupported = true
     author = "rexlManu"
     website = "https://github.com/rexlManu/FairyChat"
